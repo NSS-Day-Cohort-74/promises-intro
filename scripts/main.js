@@ -90,21 +90,7 @@ const fetchUsersXHR = () => {
     });
 }
 
-
-const asyncUsers = async () => {
-    const response = await fetch('http://localhost:8000/users')
-    const allUsersArray = await response.json()
-    return allUsersArray
-}
-
-
-
-// const usersXHR = fetchUsersXHR();
-// usersXHR.then(data => console.log(data));
-
-
-
-const fetchUsers = () => {
+const fetchThenUsers = () => {
     return fetch('http://localhost:8000/users')
         .then(response => response.json())
         .then(allUsersArray => {
@@ -112,8 +98,14 @@ const fetchUsers = () => {
         });
 }
 
-const userFetch = fetchUsers();
-console.log(userFetch.then(data => console.log(data)));
+
+const fetchAsyncUsers = async () => {
+    const response = await fetch('http://localhost:8000/users')
+    const allUsersArray = await response.json()
+    return allUsersArray
+}
+
+
 
 
 
